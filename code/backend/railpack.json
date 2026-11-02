@@ -1,0 +1,7 @@
+{
+  "provider": "java",
+  "deploy": {
+    "variables": { "SPRING_PROFILES_ACTIVE": "production" },
+    "startCommand": "java -Xmx192m -Xss512k -XX:+UseSerialGC -XX:MaxMetaspaceSize=96m -jar target/wastelens-backend-0.1.0-SNAPSHOT.jar"
+  }
+}

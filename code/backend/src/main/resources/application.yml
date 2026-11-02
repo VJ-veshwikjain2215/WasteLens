@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: wastelens-backend
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  datasource:
+    url: ${DB_JDBC_URL:jdbc:postgresql://localhost:5432/wastelens}
+    username: ${DB_USER:wastelens_app}
+    password: ${DB_PASSWORD:wastelens_secret}
+    hikari:
+      maximum-pool-size: 4
+      connection-timeout: 3000
+      minimum-idle: 1
+      initialization-fail-timeout: -1
+
+auth:
+  issuer: ${NEON_AUTH_ISSUER:${NEON_AUTH_BASE_URL:${SUPABASE_ISSUER:}}}
+  jwks-uri: ${NEON_AUTH_JWKS_URL:${SUPABASE_JWKS_URI:https://example.supabase.co/auth/v1/.well-known/jwks.json}}
+  audience: ${NEON_AUTH_AUDIENCE:${SUPABASE_AUDIENCE:}}

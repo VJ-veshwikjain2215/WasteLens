@@ -1,0 +1,23 @@
+# Build targets
+**/target/
+**/node_modules/
+**/dist/
+*.tsbuildinfo
+.mvn/wrapper/maven-wrapper.jar
+
+# Environment variables and secrets
+**/.env
+**/.env.*
+**/.env.local
+**/.env.neon
+!**/.env.example
+
+# Logs and OS files
+*.log
+**/target/
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.iml
